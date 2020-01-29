@@ -1,0 +1,20 @@
+{
+  "name": "apollo-typeorm-transaction-plugin",
+  "version": "1.0.0",
+  "description": "A Plugin for automatic creation of a typeorm transaction per request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Vonend",
+  "license": "ISC",
+  "keywords": ["apollo", "typeorm"],
+  "devDependencies": {
+    "apollo-server-plugin-base": "^0.6.10",
+    "typeorm": "^0.2.22"
+  },
+  "peerDependencies": {
+    "apollo-server-plugin-base": "^0.6.10",
+    "typeorm": "^0.2.22"
+  }
+}
