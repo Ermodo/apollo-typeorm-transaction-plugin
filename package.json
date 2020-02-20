@@ -1,6 +1,6 @@
 {
   "name": "@ams-pro/apollo-plugin-transaction",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Plugin for automatic creation of a typeorm transaction per request",
   "main": "dist/index.js",
   "repository": {
