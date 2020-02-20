@@ -1,13 +1,16 @@
 {
   "name": "@ams-pro/apollo-plugin-transaction",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.1.1",
   "description": "A Plugin for automatic creation of a typeorm transaction per request",
   "main": "dist/index.js",
+  "repository": {
+    "url": "https://github.com/ams-pro/apollo-plugin-transaction"
+  },
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "tsc -p tsconfig.json",
     "prepublish:npm": "yarn build",
-    "publish:npm": "npm publish --access public"
+    "publish:npm": "yarn publish --access public"
   },
   "author": "Matthias Vonend",
   "license": "MIT",
@@ -19,6 +22,7 @@
   ],
   "dependencies": {
     "apollo-server-plugin-base": "^0.6.10",
+    "graphql": "^14.6.0",
     "typeorm": "^0.2.22"
   },
   "devDependencies": {
