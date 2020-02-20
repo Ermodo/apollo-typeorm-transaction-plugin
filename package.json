@@ -1,20 +1,30 @@
 {
-  "name": "apollo-typeorm-transaction-plugin",
-  "version": "1.0.0",
+  "name": "@ams-pro/apollo-plugin-transaction",
+  "version": "0.0.0-alpha.1",
   "description": "A Plugin for automatic creation of a typeorm transaction per request",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p tsconfig.json",
+    "prepublish:npm": "yarn build",
+    "publish:npm": "npm publish --access public"
   },
   "author": "Matthias Vonend",
-  "license": "ISC",
-  "keywords": ["apollo", "typeorm"],
-  "devDependencies": {
+  "license": "MIT",
+  "keywords": [
+    "apollo",
+    "typeorm",
+    "graphql",
+    "nestjs"
+  ],
+  "dependencies": {
     "apollo-server-plugin-base": "^0.6.10",
     "typeorm": "^0.2.22"
   },
-  "peerDependencies": {
-    "apollo-server-plugin-base": "^0.6.10",
-    "typeorm": "^0.2.22"
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  },
+  "optionalDependencies": {
+    "type-graphql": "^0.17.6"
   }
 }

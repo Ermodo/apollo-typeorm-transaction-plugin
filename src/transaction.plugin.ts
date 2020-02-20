@@ -1,5 +1,4 @@
-import { ApolloServerPlugin } from 'apollo-server-plugin-base';//TODO peer dependency
-import { Connection } from 'typeorm';
+import { ApolloServerPlugin } from 'apollo-server-plugin-base'; //TODO peer dependency
 
 import { getRunnerFromContext, setRunnerInContext } from './transaction.helper';
 import { Options } from './options';
@@ -8,17 +7,16 @@ const STUCK_CONTROL_CONTEXT_KEY = '_TRANSACTION_STUCK_CONTROL_TIMEOUT';
 
 const cleanUpConnection = async context => {
   const runner = getRunnerFromContext(context);
-  setRunnerInContext(context, null);
+  setRunnerInContext(context);
   await runner.release();
   clearTimeout(context[STUCK_CONTROL_CONTEXT_KEY]);
 };
 
 export class TransactionPlugin implements ApolloServerPlugin {
-
   private readonly options: Options;
 
   constructor(options: Partial<Options>) {
-    this.options = Object.assign(new Options(), options);
+    this.options = { ...new Options(), ...options };
   }
 
   private async startTransaction(context: any) {
@@ -62,7 +60,7 @@ export class TransactionPlugin implements ApolloServerPlugin {
       },
       willSendResponse: async ({ context }) => {
         await this.commitTransaction(context);
-      },
+      }
     };
   }
 }
