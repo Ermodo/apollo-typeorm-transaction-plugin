@@ -8,7 +8,7 @@
     "url": "https://github.com/ams-pro/apollo-plugin-transaction"
   },
   "scripts": {
-    "test": "echo 'TBD',
+    "test": "echo 'TBD'",
     "prebuild": "rm -rf dist",
     "build": "tsc -p tsconfig.json",
     "prepublish:npm": "yarn build",
